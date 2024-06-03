@@ -1,0 +1,9 @@
+import example.*
+
+test "velocidad se va de los limites establecidos" {
+	const x = new NaveBasica()
+	x.acelerar(200000)
+	assert.equals(100000, x.velocidad())
+	x.desacelerar(200000)
+	assert.equals(0, x.velocidad())
+}
