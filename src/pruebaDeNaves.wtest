@@ -7,3 +7,9 @@ test "velocidad se va de los limites establecidos" {
 	x.desacelerar(200000)
 	assert.equals(0, x.velocidad())
 }
+
+test "nave de combata es escuta"{
+	const z = new NaveDeCombate()
+	z.emitirMensaje("123456789012345678901234567890")
+	assert.notThat(z.esEscueta())
+}
