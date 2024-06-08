@@ -8,8 +8,21 @@ test "velocidad se va de los limites establecidos" {
 	assert.equals(0, x.velocidad())
 }
 
-test "nave de combata es escuta"{
+test "nave de combate es escuta"{
 	const z = new NaveDeCombate()
 	z.emitirMensaje("123456789012345678901234567890")
 	assert.notThat(z.esEscueta())
+}
+
+test "nave de combate prepara para viaje"{
+	const c = new NaveDeCombate()
+	c.prepararViaje()
+	assert.equals(20000, c.velocidad())
+}
+
+test "nave baliza y nave de combate estan tranquilos"{
+	const v =  new NaveBaliza()
+	v.cargarCombustible(4000)
+	v.cambiarColorDeBaliza("azul")
+	assert.that(v.estaTranquila())
 }
